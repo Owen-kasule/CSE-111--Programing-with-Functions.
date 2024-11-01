@@ -1,4 +1,4 @@
-# tire_volume.py
+# tire_volume.py Author: Owen Kasule Muhereza
 
 import math
 from datetime import datetime
@@ -26,34 +26,32 @@ def get_tire_price(width, aspect_ratio, diameter):
     return tire_prices.get((width, aspect_ratio, diameter), None)
 
 def main():
-    # Get user input
-    width = float(input("Enter the width of the tire in mm (ex 205): "))
-    aspect_ratio = float(input("Enter the aspect ratio of the tire (ex 60): "))
-    diameter = float(input("Enter the diameter of the wheel in inches (ex 15): "))
+    # Prompt user for input with separate prompts for each value
+    width = float(input("Enter the width of the tire in mm (e.g., 205): "))
+    aspect_ratio = float(input("Enter the aspect ratio of the tire (e.g., 60): "))
+    diameter = float(input("Enter the diameter of the wheel in inches (e.g., 15): "))
 
-    # Calculate the volume
+    # Calculate the volume and round to two decimal places
     volume = calculate_tire_volume(width, aspect_ratio, diameter)
-
-    # Display the calculated volume
     print(f"The approximate volume is {volume:.2f} liters")
 
-    # Check and display the price if the size matches a known price
+    # Get the price based on tire dimensions
     price = get_tire_price(width, aspect_ratio, diameter)
     if price is not None:
         print(f"The price for a tire with these dimensions is ${price:.2f}")
     else:
         print("Sorry, we don't have a price for this tire size.")
 
-    # Ask the user if they would like to purchase the tires
+    # Ask if the user wants to purchase tires
     purchase = input("Would you like to purchase tires with these dimensions? (yes/no): ").strip().lower()
     phone_number = None
     if purchase == "yes":
         phone_number = input("Please enter your phone number for contact: ")
 
-    # Get the current date
+    # Get the current date (formatted to match YYYY-MM-DD)
     current_date = datetime.now().date()
 
-    # Append the information to volumes.txt
+    # Append the data to volumes.txt
     with open("volumes.txt", "a") as file:
         if phone_number:
             # Include phone number if the user wants to purchase
@@ -62,6 +60,6 @@ def main():
             # Without phone number if no purchase
             print(f"{current_date}, {width}, {aspect_ratio}, {diameter}, {volume:.2f}", file=file)
 
-# Call the main function
+# Run the program
 if __name__ == "__main__":
     main()
