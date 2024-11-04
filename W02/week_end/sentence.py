@@ -36,15 +36,18 @@ def get_verb(quantity, tense):
 def get_preposition():
     """Return a randomly chosen preposition from a list."""
     prepositions = [
-        "about", "above", "across", "after", "along", "around", "at", "before", "behind", "below",
-        "beyond", "by", "despite", "except", "for", "from", "in", "into", "near", "of",
-        "off", "on", "onto", "out", "over", "past", "to", "under", "with", "without"
+        "above", "across", "against", "along", "among", "around", "at", "before", "behind", "below",
+        "beside", "between", "by", "down", "for", "from", "in", "inside", "near", "off",
+        "on", "over", "through", "to", "toward", "under", "up", "with", "without"
     ]
     return random.choice(prepositions)
 
 def get_prepositional_phrase(quantity):
     """Build and return a prepositional phrase with a preposition, determiner, and noun."""
-    return f"{get_preposition()} {get_determiner(quantity)} {get_noun(quantity)}"
+    preposition = get_preposition()
+    determiner = get_determiner(quantity)
+    noun = get_noun(quantity)
+    return f"{preposition} {determiner} {noun}"
 
 def make_sentence(quantity, tense):
     """Construct and return a sentence with determiner, noun, verb, and two prepositional phrases."""
