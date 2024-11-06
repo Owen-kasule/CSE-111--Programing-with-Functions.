@@ -48,17 +48,17 @@ def main():
     if purchase == "yes":
         phone_number = input("Please enter your phone number for contact: ")
 
-    # Get the current date (formatted to match YYYY-MM-DD)
-    current_date = datetime.now().date()
+    # Get the current date in YYYY-MM-DD format
+    current_date = datetime.now().strftime("%Y-%m-%d")
 
     # Append the data to volumes.txt
     with open("volumes.txt", "a") as file:
         if phone_number:
             # Include phone number if the user wants to purchase
-            print(f"{current_date}, {width}, {aspect_ratio}, {diameter}, {volume:.2f}, {price:.2f}, {phone_number}", file=file)
+            print(f"{current_date}, {int(width)}, {int(aspect_ratio)}, {int(diameter)}, {volume:.2f}, {price:.2f}, {phone_number}", file=file)
         else:
             # Without phone number if no purchase
-            print(f"{current_date}, {width}, {aspect_ratio}, {diameter}, {volume:.2f}", file=file)
+            print(f"{current_date}, {int(width)}, {int(aspect_ratio)}, {int(diameter)}, {volume:.2f}", file=file)
 
 # Run the program
 if __name__ == "__main__":
