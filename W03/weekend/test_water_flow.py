@@ -1,4 +1,3 @@
-
 from water_flow import (
     water_column_height,
     pressure_gain_from_water_height,
@@ -53,7 +52,4 @@ def test_pressure_loss_from_pipe_reduction():
 def test_kpa_to_psi():
     assert kpa_to_psi(0.0) == approx(0.000, abs=0.001)
     assert kpa_to_psi(101.325) == approx(14.696, abs=0.001)
-    assert kpa_to_psi(158.7) == approx(23.028, abs=0.001)
-
-if __name__ == "__main__":
-    pytest.main(["-v", "--tb=line", "-rN", __file__])
+    assert kpa_to_psi(158.7) == approx(23.028, abs=0
