@@ -67,3 +67,5 @@ def test_extract_given_name():
     assert extract_given_name("Smith-Jones; Ava") == "Ava"
     assert extract_given_name("Van Buren; Emily") == "Emily"
     assert extract_given_name("O'Connor; Jane") == "Jane"
+    
+    pytest.main(["-v", "--tb=line", "-rN", __file__])
