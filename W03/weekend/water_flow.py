@@ -1,3 +1,13 @@
+"""
+Water Flow Calculations Module
+Author: Owen Kasule Muhereza
+CSE 111 - Programming with Functions
+Week 03 - Assignment: Water Flow Calculations
+
+This module provides functions for calculating various aspects of water flow
+including pressure gains/losses, Reynolds numbers, and unit conversions.
+"""
+
 import math
 
 # Constants

@@ -1,3 +1,13 @@
+"""
+Water Flow Calculations Test Module
+Author: Owen Kasule Muhereza
+CSE 111 - Programming with Functions
+Week 03 - Assignment: Water Flow Tests
+
+This module contains pytest test functions for verifying the
+water flow calculations implemented in water_flow.py.
+"""
+
 from pytest import approx
 from water_flow import (water_column_height, pressure_gain_from_water_height, pressure_loss_from_pipe,
                          pressure_loss_from_fittings, reynolds_number, pressure_loss_from_pipe_reduction)
