@@ -2,19 +2,13 @@ from pytest import approx
 from water_flow import (water_column_height, pressure_gain_from_water_height, pressure_loss_from_pipe,
                          pressure_loss_from_fittings, reynolds_number, pressure_loss_from_pipe_reduction)
 
-# Constants
-GRAVITY = 9.81  # Earth's acceleration due to gravity in m/s^2
-WATER_DENSITY = 1000.0  # Water density in kg/m^3
-WATER_DYNAMIC_VISCOSITY = 0.001002  # Water dynamic viscosity in Pa.s
-
-# Function to convert kilopascals (kPa) to pounds per square inch (psi)
 def kpa_to_psi(kpa):
+    """Convert kilopascals to pounds per square inch."""
     return kpa * 0.145038
 
-# Test function for kPa to psi conversion
 def test_kpa_to_psi():
     assert kpa_to_psi(0.0) == approx(0.0, abs=0.001)
-    assert kpa_to_psi(101.325) == approx(14.696, abs=0.001)  # Standard atmospheric pressure
+    assert kpa_to_psi(101.325) == approx(14.696, abs=0.001)
     assert kpa_to_psi(200.0) == approx(29.007, abs=0.001)
 
 def test_water_column_height():
