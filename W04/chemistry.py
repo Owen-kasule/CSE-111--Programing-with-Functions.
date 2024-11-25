@@ -101,11 +101,6 @@ def make_periodic_table():
 
 def main():
     """Main function to print periodic table."""
-    # Get the molecule formula and mass from the user
-    chemical_formula = input("Enter the chemical formula: ")
-    sample_mass = float(input("Enter the sample mass in grams: "))
-
-    # Create the periodic table
     periodic_table = make_periodic_table()
 
     # Print the name and atomic mass of each element
