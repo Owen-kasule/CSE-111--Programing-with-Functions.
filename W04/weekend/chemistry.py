@@ -133,8 +133,41 @@ def compute_molar_mass(symbol_quantity_list, periodic_table_dict):
         total_molar_mass += atomic_mass * quantity
     return total_molar_mass
 
+def get_formula_name(formula, known_molecules_dict):
+    """Try to find formula in the known_molecules_dict.
+    If formula is in the known_molecules_dict, return
+    the name of the chemical formula; otherwise return
+    "unknown compound".
+    Parameters
+        formula is a string that contains a chemical formula
+        known_molecules_dict is a dictionary that contains
+            known chemical formulas and their names
+    Return: the name of a chemical formula
+    """
+    return known_molecules_dict.get(formula, "unknown compound")
+
 def main():
     """Main function to compute molar mass and number of moles."""
+    # Known chemical formulas and their names
+    known_molecules_dict = {
+        "Al2O3": "aluminum oxide",
+        "CH3OH": "methanol",
+        "C2H6O": "ethanol",
+        "C2H5OH": "ethanol",
+        "C3H8O": "isopropyl alcohol",
+        "C3H8": "propane",
+        "C4H10": "butane",
+        "C6H6": "benzene",
+        "C6H14": "hexane",
+        "C8H18": "octane",
+        "CH3(CH2)6CH3": "octane",
+        "C13H18O2": "ibuprofen",
+        "C13H16N2O2": "melatonin",
+        "Fe2O3": "iron oxide",
+        "FeS2": "iron pyrite",
+        "H2O": "water"
+    }
+
     # Get a chemical formula for a molecule from the user.
     formula = input("Enter the chemical formula for the molecule: ")
 
@@ -153,6 +186,12 @@ def main():
 
     # Compute the number of moles in the sample.
     number_of_moles = sample_mass / molar_mass
+
+    # Call the get_formula_name function to get the name of the molecule.
+    compound_name = get_formula_name(formula, known_molecules_dict)
+
+    # Print the name of the molecule.
+    print(f"The chemical formula {formula} is {compound_name}.")
 
     # Print the molar mass.
     print(f"Molar mass of {formula}: {molar_mass:.5f} g/mol")
