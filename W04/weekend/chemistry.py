@@ -134,12 +134,31 @@ def compute_molar_mass(symbol_quantity_list, periodic_table_dict):
     return total_molar_mass
 
 def main():
-    """Main function to print periodic table."""
+    """Main function to compute molar mass and number of moles."""
+    # Get a chemical formula for a molecule from the user.
+    formula = input("Enter the chemical formula for the molecule: ")
+
+    # Get the mass of a chemical sample in grams from the user.
+    sample_mass = float(input("Enter the mass of the sample in grams: "))
+
+    # Call the make_periodic_table function and store the periodic table in a variable.
     periodic_table = make_periodic_table()
 
-    # Print the name and atomic mass of each element
-    for symbol, (name, atomic_mass) in periodic_table.items():
-        print(f"{name} {atomic_mass}")
+    # Call the parse_formula function to convert the chemical formula given by the user
+    # to a compound list that stores element symbols and the quantity of atoms of each element in the molecule.
+    symbol_quantity_list = parse_formula(formula, periodic_table)
+
+    # Call the compute_molar_mass function to compute the molar mass of the molecule from the compound list.
+    molar_mass = compute_molar_mass(symbol_quantity_list, periodic_table)
+
+    # Compute the number of moles in the sample.
+    number_of_moles = sample_mass / molar_mass
+
+    # Print the molar mass.
+    print(f"Molar mass of {formula}: {molar_mass:.5f} g/mol")
+
+    # Print the number of moles.
+    print(f"Number of moles in the sample: {number_of_moles:.5f}")
 
 if __name__ == "__main__":
     main()
