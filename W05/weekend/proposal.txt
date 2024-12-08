@@ -1,55 +1,48 @@
- CSE 111 Proposal for a Student Chosen Program
+Proposal: Calculator for Basic and Advanced Operations
+Program Title
+Calculator for Basic and Advanced Operations
 
-    (This is a proposal. All proposals are written with our best
-    knowledge at the beginning of a project. As we progress from the
-    beginning to the end of a project, we gain more knowledge, and we
-    change some of our proposed ideas. This is part of completing any
-    project and is fine.  However, we still must write a proposal so
-    that our teachers or supervisors know what we intend to do. Please
-    answer each of the following questions to the best of your
-    knowledge.)
+Program Description
+In education, engineering, finance, and everyday life, users often need a reliable and versatile tool to perform quick and accurate calculations. This program is designed to solve this real-world problem by offering an easy-to-use calculator that handles basic arithmetic operations (addition, subtraction, multiplication, division) and advanced operations (e.g., trigonometric functions, logarithms, and power calculations). Additionally, the calculator includes features like unit conversion (e.g., between metric and imperial systems) and statistical analysis (mean, median, and mode). With an intuitive command-line interface, the program aims to save time and increase productivity for students, professionals, and anyone requiring a computational tool.
 
-1. What is the title of your program?
-Calculator for basic and advanced operations.
-2. What real-world problem will your program address or help to solve?
-The program will provide a versatile and efficient tool to perform basic
-arithmetic and advanced mathematical operational andthis calculator will be useful for students, educators and 
-professional needing quick,reliable computations without requiring external software.
-3. What will you learn from developing this program?
-Writing well organised and reusable functions.
-Implementing error handling to create a robust user experience.
-Testing functions with pytest to ensure program accuracy.
-4. What Python modules will your program use?
-math (for advanced mathematical functions like square root and exponentiation)
-pytest (for testing program functions)
-Optionally: tkinter (for creating a GUI if added)
-    (Some examples are: csv, datetime, functools, matplotlib, math,
-    pandas, pytest, random, requests, and tkinter.)
+Learning Objectives
+By developing this program, I aim to:
 
-5. List the names of functions you will need?
-add(a, b): Adds two numbers.
-subtract(a, b): Subtracts one number from another.
-multiply(a, b): Multiplies two numbers.
-divide(a, b): Divides one number by another (with error handling for division by zero).
-get_number(prompt): Validates user input as a number.
-main_menu(): Displays the calculator's main menu.
-main(): Controls the program's flow, including calling other functions.
-    (Remember that the most reusable functions don't get user input and
-    don't print results but instead have parameters and return a result.
-    Functions that get user input and print results are important and do
-    useful work but are not easily reusable.)
+Learn to handle user input and validate it for correctness.
+Improve proficiency with modular programming by dividing tasks into specific functions.
+Gain deeper understanding of mathematical libraries in Python, such as math and statistics.
+Implement error handling to ensure robust functionality and user-friendly messaging.
+Practice writing and executing test cases using pytest to ensure code accuracy and reliability.
+Modules Used
+The program will use the following modules:
 
-    (Remember also that it's hard to test functions that get user input
-    and print results. It's easy to test functions that don't get user
-    input and don't print results but instead have parameters and return
-    a result. Therefore, you should write most of your program functions
-    to have parameters and return a result.)
+math - For advanced mathematical functions like trigonometric calculations.
+statistics - For performing statistical operations such as calculating mean, median, and mode.
+pytest - For writing and executing test functions to verify program correctness.
+Function Names
+The following functions are planned for the program:
 
-6. List the names of the test functions you will write.
-test_add(): Tests the add() function.
-test_subtract(): Tests the subtract() function.
-test_multiply(): Tests the multiply() function.
-test_divide(): Tests the divide() function, including edge cases like division by zero.
-Optional:
-test_square_root(): Tests the square_root() function.
-test_power(): Tests the power() function.
+add(a, b) - Performs addition of two numbers.
+subtract(a, b) - Performs subtraction of two numbers.
+multiply(a, b) - Performs multiplication of two numbers.
+divide(a, b) - Performs division of two numbers with error handling for division by zero.
+calculate_trig(function, value) - Computes trigonometric functions like sine, cosine, and tangent.
+logarithm(base, value) - Calculates the logarithm of a number for a given base.
+convert_units(value, unit_from, unit_to) - Handles unit conversion between metric and imperial systems.
+statistical_analysis(data_list) - Computes mean, median, and mode of a given dataset.
+get_user_input() - Retrieves and validates user input.
+main() - Orchestrates the program’s workflow.
+Test Function Names
+The following test functions will be implemented:
+
+test_add() - Verifies the correctness of the addition function.
+test_subtract() - Tests the subtraction function.
+test_multiply() - Ensures the multiplication function works as expected.
+test_divide() - Confirms division, including error handling for division by zero.
+test_calculate_trig() - Validates trigonometric calculations.
+test_logarithm() - Checks the accuracy of logarithmic calculations.
+test_convert_units() - Ensures unit conversion is accurate.
+test_statistical_analysis() - Validates statistical functions like mean, median, and mode.
+
+Summary
+This program will serve as a comprehensive tool for handling various mathematical and statistical calculations, addressing real-world needs for students and professionals. It is modular, user-friendly, and robust, and will provide valuable learning experience in Python programming, mathematical computations, and software testing.
