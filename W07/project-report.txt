@@ -29,6 +29,3 @@ doing any of the following:
 
 Total time spent: 14 hours
 
-2. In Canvas, submit this completed text file, your Python program, your
-Python test file, and any project data files such as .txt and .csv files and
-link to video walkthrough if needed.
