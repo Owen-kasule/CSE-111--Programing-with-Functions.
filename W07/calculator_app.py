@@ -2,34 +2,7 @@ import math
 import tkinter as tk
 from tkinter import ttk, messagebox
 
-# Standalone functions for basic and advanced operations
-def add(a, b):
-    return a + b
 
-def subtract(a, b):
-    return a - b
-
-def multiply(a, b):
-    return a * b
-
-def divide(a, b):
-    if b == 0:
-        raise ZeroDivisionError("Cannot divide by zero.")
-    return a / b
-
-def calculate_sine(value):
-    return math.sin(math.radians(value))
-
-def calculate_cosine(value):
-    return math.cos(math.radians(value))
-
-def calculate_logarithm(value):
-    if value <= 0:
-        raise ValueError("Logarithm base must be greater than 0.")
-    return math.log(value)
-
-
-# Class for the calculator GUI
 class CalculatorApp:
     def __init__(self, root):
         self.root = root
@@ -89,19 +62,23 @@ class CalculatorApp:
             num2 = float(self.num2_entry.get()) if self.num2_entry.get() else None
 
             if operation == "Add":
-                result = add(num1, num2)
+                result = num1 + num2
             elif operation == "Subtract":
-                result = subtract(num1, num2)
+                result = num1 - num2
             elif operation == "Multiply":
-                result = multiply(num1, num2)
+                result = num1 * num2
             elif operation == "Divide":
-                result = divide(num1, num2)
+                if num2 == 0:
+                    raise ZeroDivisionError("Cannot divide by zero.")
+                result = num1 / num2
             elif operation == "Sine":
-                result = calculate_sine(num1)
+                result = math.sin(math.radians(num1))
             elif operation == "Cosine":
-                result = calculate_cosine(num1)
+                result = math.cos(math.radians(num1))
             elif operation == "Logarithm":
-                result = calculate_logarithm(num1)
+                if num1 <= 0:
+                    raise ValueError("Logarithm base must be greater than 0.")
+                result = math.log(num1)
 
             self.result_value.config(text=f"{result:.2f}")
             self.status_bar.config(text="Calculation successful", foreground="green")
