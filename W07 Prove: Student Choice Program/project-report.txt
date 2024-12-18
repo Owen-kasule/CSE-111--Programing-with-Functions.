@@ -1,0 +1,31 @@
+Second Report for a Student Chosen Project
+
+1. In the table below, list the dates, amount of time spent, and
+description of the work that you did on your project. Follow the example
+that is in the first row of the table below. Include the time you spent
+doing any of the following:
+    a. discussing your project with your teacher, tutor, or fellow students
+    b. researching by reading articles and watching applicable videos
+    c. designing your project by drawing diagrams and other applicable documents
+    d. writing experimental code
+    e. writing code for your project
+    f. writing test functions
+    g. debugging your code
+    h. any other activity that helped you complete your project
+
+            Time Spent
+   Date       (hours)   Description of Work
+----------  ----------  -------------------------
+2024-12-18      1.0     Researched GUI designs for calculators.
+2024-12-18      2.0     Created a skeleton for the main calculator app.
+2024-12-19      2.5     Added functions for basic operations and advanced functions.
+2024-12-19      1.0     Developed a user-friendly GUI with tkinter.
+2024-12-19      1.5     Implemented error handling for division and input validation.
+2024-12-20      1.0     Wrote initial test cases for addition, subtraction, and multiplication.
+2024-12-20      2.0     Debugged calculation functions and GUI responsiveness issues.
+2024-12-20      1.5     Improved test coverage for all core and edge cases.
+2024-12-21      1.0     Finalized the project and conducted thorough testing.
+2024-12-21      0.5     Prepared the project report and ensured alignment with requirements.
+
+Total time spent: 14 hours
+
